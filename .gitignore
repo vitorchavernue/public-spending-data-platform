@@ -1,0 +1,14 @@
+data/
+dbt/target/
+dbt/logs/
+dbt/.user.yml
+validation/reports/
+__pycache__/
+*.pyc
+.venv/
+.terraform/
+*.tfstate*
+terraform.tfvars
+.env
+.pytest_cache/
+.ruff_cache/
