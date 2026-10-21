@@ -14,6 +14,35 @@ Portal da Transparência), covering the whole lifecycle of a real-world migratio
 
 ---
 
+## 🎯 Business problem
+
+A company keeps its analytical data in an **S3 data lake queried through Athena**. As usage grows, three problems appear:
+
+| Problem | Impact |
+|---|---|
+| **Unpredictable cost** — recurring BI and analyst queries scan hundreds of MB to more than 100 GB each, several times a day, on large tables without effective partition filters | Athena bills per TB scanned, so the monthly bill grows with every new dashboard and user |
+| **No single source of truth** — business metrics (committed, settled and paid amounts) are recalculated in different queries and reports | Different dashboards show different numbers for the same month, and trust in the data drops |
+| **Risky migration** — moving to Snowflake is the obvious fix for cost, but there is no objective way to prove the numbers stay the same | The cut-over keeps being postponed, and both platforms keep generating cost |
+
+## 💡 Solution
+
+| Step | What was built | Problem solved |
+|---|---|---|
+| 1 | Standardized **raw → bronze** layer (S3 + Glue, Parquet partitioned by month) shared by both platforms | Same input data for legacy and new platform |
+| 2 | **Workload-based migration** of the heavy, recurring queries to Snowflake, with one small warehouse per workload, 60 s auto-suspend and resource monitors | Cost becomes compute-based, predictable and capped |
+| 3 | **Governed metric layer in dbt** (silver → gold star schema) with 35 data quality tests | One definition per metric, tested on every run |
+| 4 | **Shadow validation** comparing Athena vs. Snowflake per month and agency, with a **99.5% adherence gate** | Objective, auditable cut-over criterion |
+| 5 | **Terraform + CI** running the whole pipeline on real data at every push | Reproducible environments and no regressions |
+
+## 📈 Results
+
+- **Cost under control**: heavy workloads moved from per-TB-scanned billing to per-second compute with hard monthly limits (method and example in [docs/cost_analysis.md](docs/cost_analysis.md))
+- **Consistent numbers**: Power BI reads a single tested gold layer instead of ad-hoc queries
+- **Safe migration**: cut-over approved only with ≥ 99.5% adherence on every critical metric — the current run reaches **100%** on the sample data
+- **Guardrails on the legacy side** too: per-query scan cutoff in the Athena workgroup and partition projection
+
+---
+
 ## 🏗️ Architecture
 
 ```mermaid
