@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: agg_execucao_mensal
+    description: Monthly budget execution per superior body (Power BI and shadow validation).
+    columns:
+      - name: ano_mes
+        data_tests: [not_null]
+      - name: cod_orgao_superior
+        data_tests: [not_null]
+      - name: taxa_execucao
+        description: Paid / committed amount in the month.

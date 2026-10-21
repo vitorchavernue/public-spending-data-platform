@@ -1,0 +1,30 @@
+name: public_spending
+version: "1.0.0"
+config-version: 2
+profile: public_spending
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # first month expected in the dataset (YYYYMM); used by data tests
+  min_ano_mes: "202001"
+
+models:
+  public_spending:
+    staging:
+      +materialized: view
+      +schema: silver
+    marts:
+      +materialized: table
+      core:
+        +schema: gold
+      analytics:
+        +schema: gold
+
+data_tests:
+  public_spending:
+    +severity: error

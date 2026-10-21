@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: dim_orgao
+    description: Government agencies (subordinate body and its superior body).
+    columns:
+      - name: orgao_key
+        data_tests: [unique, not_null]
+      - name: cod_orgao_subordinado
+        data_tests: [unique, not_null]
+
+  - name: dim_funcao
+    description: Functional classification (function and subfunction).
+    columns:
+      - name: funcao_key
+        data_tests: [unique, not_null]
+
+  - name: dim_programa
+    description: Budget program and action.
+    columns:
+      - name: programa_key
+        data_tests: [unique, not_null]
+
+  - name: dim_natureza_despesa
+    description: Nature of expense (economic category, group, element, modality).
+    columns:
+      - name: natureza_key
+        data_tests: [unique, not_null]
+
+  - name: dim_localidade
+    description: Brazilian states (UF) and regions.
+    columns:
+      - name: localidade_key
+        data_tests: [unique, not_null]
+      - name: regiao
+        data_tests: [not_null]
+
+  - name: dim_calendario
+    description: Months available in the dataset.
+    columns:
+      - name: ano_mes
+        data_tests: [unique, not_null]
+
+  - name: fct_despesas
+    description: Expenditure execution fact (grain = one source line).
+    columns:
+      - name: despesa_id
+        data_tests: [unique, not_null]
+      - name: orgao_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_orgao'), field: orgao_key}
+      - name: funcao_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_funcao'), field: funcao_key}
+      - name: programa_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_programa'), field: programa_key}
+      - name: natureza_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_natureza_despesa'), field: natureza_key}
+      - name: localidade_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_localidade'), field: localidade_key}
+      - name: ano_mes
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_calendario'), field: ano_mes}

@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_despesas
+    description: Silver layer. One row per expenditure line, typed and standardized.
+    columns:
+      - name: despesa_id
+        description: Hash of the natural key (month + all classification codes).
+        data_tests: [unique, not_null]
+      - name: ano_mes
+        data_tests: [not_null]
+      - name: mes_referencia
+        data_tests: [not_null]
+      - name: uf
+        description: State; 'NI' when not informed (national-level spending).
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [AC, AL, AM, AP, BA, CE, DF, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO, EX, NI]
+      - name: cod_categoria_economica
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['3', '4', '9']

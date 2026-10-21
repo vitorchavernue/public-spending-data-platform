@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: >
+      Bronze layer produced by the Glue job (raw CSV -> Parquet). In Snowflake it is
+      loaded into RAW.BRONZE.DESPESAS by COPY INTO; locally DuckDB reads the Parquet files.
+    database: "{{ 'RAW' if target.type == 'snowflake' else target.database }}"
+    schema: "{{ 'BRONZE' if target.type == 'snowflake' else 'main' }}"
+    tables:
+      - name: despesas
+        description: Monthly federal public expenditure execution (Portal da Transparência).
+        meta:
+          external_location: >-
+            read_parquet('{{ env_var("BRONZE_PATH", "../data/bronze") }}/despesas/*/*.parquet', hive_partitioning = true)
+        columns:
+          - name: ano_mes
+            data_tests: [not_null]
+          - name: cod_orgao_subordinado
+            data_tests: [not_null]
