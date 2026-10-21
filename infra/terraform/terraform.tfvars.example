@@ -1,0 +1,4 @@
+region                 = "us-east-1"
+data_lake_bucket       = "my-company-public-spending-lake"
+snowflake_iam_user_arn = ""
+snowflake_external_id  = ""
