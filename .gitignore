@@ -12,3 +12,4 @@ terraform.tfvars
 .env
 .pytest_cache/
 .ruff_cache/
+.dbt-venv/

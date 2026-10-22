@@ -10,7 +10,8 @@ Portal da Transparência), covering the whole lifecycle of a real-world migratio
 - **dbt** — medallion modeling (silver → gold), **star schema**, and **data quality tests**
 - **Shadow validation** — legacy vs. new platform reconciliation with a **99.5% minimum adherence** gate
 - **Cost analysis** — scan-based (Athena) vs. compute-based (Snowflake) pricing and guardrails
-- **Infrastructure as code** (Terraform) and **CI** (GitHub Actions) running the full pipeline on real sample data
+- **Apache Airflow 3** — monthly orchestration with retries, quality gate, Power BI refresh and Teams/Slack alerts
+- **Infrastructure as code** (Terraform) and **CI** (GitHub Actions) running the full pipeline — including the Airflow DAG — on real sample data
 
 ---
 
@@ -32,7 +33,8 @@ A company keeps its analytical data in an **S3 data lake queried through Athena*
 | 2 | **Workload-based migration** of the heavy, recurring queries to Snowflake, with one small warehouse per workload, 60 s auto-suspend and resource monitors | Cost becomes compute-based, predictable and capped |
 | 3 | **Governed metric layer in dbt** (silver → gold star schema) with 35 data quality tests | One definition per metric, tested on every run |
 | 4 | **Shadow validation** comparing Athena vs. Snowflake per month and agency, with a **99.5% adherence gate** | Objective, auditable cut-over criterion |
-| 5 | **Terraform + CI** running the whole pipeline on real data at every push | Reproducible environments and no regressions |
+| 5 | **Airflow orchestration**: monthly DAG with retries, timeouts, a validation gate that blocks the release, Power BI refresh and alerts | No manual steps; wrong numbers never reach the reports |
+| 6 | **Terraform + CI** running the whole pipeline (and the Airflow DAG) on real data at every push | Reproducible environments and no regressions |
 
 ## 📈 Results
 
@@ -85,7 +87,8 @@ flowchart LR
 | 5. Transform | [`dbt/`](dbt/) | Silver/gold models, surrogate keys, cross-database macros (Snowflake + DuckDB) |
 | 6. Data quality | `dbt build` | 35 tests: unique/not null keys, relationships, accepted values, silver ↔ gold reconciliation, valid months |
 | 7. Shadow validation | [`validation/shadow_validation.py`](validation/shadow_validation.py) | Key coverage + metric adherence per month and agency, divergence report, CI gate |
-| 8. Consumption | Power BI | See the [Public Budget Execution Dashboard](https://github.com/vitorchavernue/public-budget-execution-powerbi) |
+| 8. Consumption | Power BI | Refreshed by the pipeline through the REST API — see the [Public Budget Execution Dashboard](https://github.com/vitorchavernue/public-budget-execution-powerbi) |
+| ⏱️ Orchestration | [`orchestration/`](orchestration/) | **Airflow 3 DAG** running steps 1–8 every month: retries, timeouts, validation gate, alerts, local/cloud modes — [details](orchestration/README.md) |
 
 ---
 
@@ -176,6 +179,13 @@ cd dbt && BRONZE_PATH=../data/bronze dbt build --profiles-dir . --target local &
 python validation/shadow_validation.py --legacy local --new local
 ```
 
+Or orchestrated by **Airflow**, end to end (same DAG used in production, local mode):
+
+```bash
+make airflow-setup && make airflow-test
+# or, with the Airflow web interface: cd orchestration/airflow && docker compose up --build
+```
+
 ## ☁️ Deploy on AWS + Snowflake
 
 1. `cd infra/terraform && terraform apply` (S3, Glue job + schedule, Athena workgroup, IAM role for Snowflake)
@@ -185,6 +195,7 @@ python validation/shadow_validation.py --legacy local --new local
 5. Snowflake: run [`snowflake/01_setup.sql`](snowflake/01_setup.sql) and [`02_load_bronze.sql`](snowflake/02_load_bronze.sql)
 6. dbt: `pip install -r requirements-cloud.txt && cd dbt && DBT_TARGET=snowflake dbt build --profiles-dir .`
 7. Validate: `python validation/shadow_validation.py --legacy athena --new snowflake`
+8. Orchestrate: deploy the DAG in `orchestration/airflow/dags/` with `PSDP_TARGET=cloud` (configuration in [orchestration/README.md](orchestration/README.md))
 
 Step-by-step migration plan: [docs/migration_runbook.md](docs/migration_runbook.md).
 
@@ -201,6 +212,7 @@ Step-by-step migration plan: [docs/migration_runbook.md](docs/migration_runbook.
 ├── snowflake/            # setup (roles, warehouses, monitors), S3 load, cost monitoring
 ├── dbt/                  # silver/gold models, tests, cross-database macros
 ├── validation/           # shadow validation (legacy vs new)
+├── orchestration/        # Airflow DAG, step logic, Docker setup
 ├── infra/terraform/      # AWS infrastructure as code
 ├── tests/                # unit tests (pytest)
 ├── sample_data/raw/      # real sample of the official monthly files
@@ -209,7 +221,7 @@ Step-by-step migration plan: [docs/migration_runbook.md](docs/migration_runbook.
 
 ## 🛠️ Tech stack
 
-**AWS** (S3, Glue, Athena, IAM) · **Snowflake** · **dbt** · **PySpark** · **Python** · **SQL** · **DuckDB** · **Terraform** · **GitHub Actions** · **Power BI**
+**AWS** (S3, Glue, Athena, IAM) · **Snowflake** · **dbt** · **Apache Airflow** · **PySpark** · **Python** · **SQL** · **DuckDB** · **Terraform** · **GitHub Actions** · **Power BI**
 
 ## 📄 Data source
 
