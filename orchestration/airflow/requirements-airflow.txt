@@ -1,0 +1,9 @@
+# Libraries the pipeline needs on top of Airflow itself (installed with the
+# official Airflow constraints, so every version is known to work together).
+apache-airflow-providers-amazon
+apache-airflow-providers-snowflake
+apache-airflow-providers-common-sql
+apache-airflow-providers-standard
+duckdb>=1.1
+pyathena>=3.8
+requests>=2.31

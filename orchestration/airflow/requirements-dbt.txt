@@ -1,0 +1,5 @@
+# dbt runs in its own Python environment, separated from Airflow. Both tools pin
+# different versions of some shared libraries (e.g. the Snowflake connector);
+# keeping them apart avoids conflicts and lets each one be upgraded independently.
+dbt-duckdb>=1.9
+dbt-snowflake>=1.9

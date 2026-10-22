@@ -1,0 +1,30 @@
+# One-command local Airflow for the public spending pipeline.
+#
+#   cd orchestration/airflow
+#   docker compose up --build
+#
+# Then open http://localhost:8080 and run the DAG "public_spending_monthly".
+# "standalone" starts every Airflow component in a single container, which is
+# ideal for development and demos (production uses separate services).
+services:
+  airflow:
+    build: .
+    command: standalone
+    ports:
+      - "8080:8080"
+    environment:
+      # Do not load Airflow's example pipelines; show only this project.
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      # Where Airflow finds the pipeline definition inside the container.
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/project/orchestration/airflow/dags
+      # Local development only: open the UI without a login screen.
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "true"
+      # The project folder (mounted below) and the execution mode: local or cloud.
+      PSDP_PROJECT_ROOT: /opt/airflow/project
+      PSDP_TARGET: ${PSDP_TARGET:-local}
+      # Optional: Microsoft Teams / Slack webhook for success and failure alerts.
+      ALERT_WEBHOOK_URL: ${ALERT_WEBHOOK_URL:-}
+    volumes:
+      # The whole repository is shared with the container, so code changes are
+      # picked up without rebuilding the image.
+      - ../..:/opt/airflow/project
