@@ -27,6 +27,14 @@ flowchart LR
     DG --> V
 ```
 
+**A real run in the Airflow web interface** — the 8 steps finished on the first attempt in about 14 seconds (local mode):
+
+![Airflow run: 8 task instances, all successful](../docs/images/airflow_run_success.png)
+
+The quality gate log: every check (key coverage, number of entries, committed, settled and paid amounts) matched the legacy platform, so the data was released:
+
+![Airflow graph view and shadow validation log](../docs/images/airflow_graph_validation.png)
+
 | # | Step | What it does (plain words) | If it fails |
 |---|---|---|---|
 | 1 | `define_months` | Picks the month that has just closed, or the months typed by a user to reprocess | Stops immediately (bad input) |

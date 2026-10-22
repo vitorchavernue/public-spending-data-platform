@@ -186,6 +186,10 @@ make airflow-setup && make airflow-test
 # or, with the Airflow web interface: cd orchestration/airflow && docker compose up --build
 ```
 
+Monthly run in the Airflow web interface — all steps green, shadow validation approved with 100% adherence:
+
+![Airflow DAG graph and shadow validation log](docs/images/airflow_graph_validation.png)
+
 ## ☁️ Deploy on AWS + Snowflake
 
 1. `cd infra/terraform && terraform apply` (S3, Glue job + schedule, Athena workgroup, IAM role for Snowflake)
