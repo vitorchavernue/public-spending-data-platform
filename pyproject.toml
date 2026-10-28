@@ -11,3 +11,7 @@ known-first-party = ["common", "ingestion", "local", "validation"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# SVG markup and texts of the architecture diagrams
+"scripts/build_architecture.py" = ["E501"]

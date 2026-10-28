@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1368" viewBox="0 0 1920 1368">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0D0C0E"/><stop offset="1" stop-color="#17151A"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#6EE7B7"/><stop offset="1" stop-color="#047857"/></linearGradient>
+  <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1800 0) scale(900)">
+    <stop stop-color="#10B981" stop-opacity="0.16"/><stop offset="1" stop-color="#10B981" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#fff" fill-opacity="0.04"/></pattern>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6EE7B7"/></marker>
+</defs>
+<rect width="1920" height="1368" rx="28" fill="url(#bg)"/>
+<rect width="1920" height="1368" rx="28" fill="url(#glow)"/>
+<rect width="1920" height="1368" rx="28" fill="url(#dots)"/>
+<g id="Header">
+<circle cx="88" cy="78" r="30" fill="none" stroke="url(#accent)" stroke-width="2.5"/><g transform="translate(70.0 60.0) scale(1.5000)" fill="none" stroke="#6EE7B7" stroke-width="2.00" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 4 8h16z"/><path d="M6 10v7M10 10v7M14 10v7M18 10v7M3.5 20h17"/></g>
+<text x="136.0" y="70.0" font-family="Inter, Segoe UI, sans-serif" font-size="17" font-weight="600" fill="#6EE7B7" text-anchor="start" letter-spacing="4">ARCHITECTURE</text>
+<text x="136.0" y="108.0" font-family="Inter, Segoe UI, sans-serif" font-size="38" font-weight="800" fill="#F4F1F5" text-anchor="start">Public Spending Data Platform</text>
+<text x="1860.0" y="70.0" font-family="Inter, Segoe UI, sans-serif" font-size="17" font-weight="500" fill="#B0A9B5" text-anchor="end">AWS S3 · Glue · Athena · Snowflake · dbt · Airflow · Terraform</text>
+<text x="1860.0" y="100.0" font-family="Inter, Segoe UI, sans-serif" font-size="17" font-weight="400" fill="#7E7684" text-anchor="end">official files → S3 raw → bronze → Snowflake → dbt silver/gold → shadow validation → Power BI</text>
+<rect x="60" y="138" width="1800" height="1.5" fill="#37333C"/><rect x="60" y="137.5" width="120" height="2.5" fill="url(#accent)"/>
+</g>
+<rect x="60" y="172" width="1800" height="92" rx="20" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<circle cx="112" cy="218" r="26" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(96.0 202.0) scale(1.3333)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 6h8M7 8l3.6 7.8M17 8l-3.6 7.8"/></g>
+<text x="154.0" y="212.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#6EE7B7" text-anchor="start" letter-spacing="3">ORCHESTRATION</text>
+<text x="154.0" y="238.0" font-family="Inter, Segoe UI, sans-serif" font-size="20" font-weight="700" fill="#F4F1F5" text-anchor="start">Apache Airflow 3 · monthly DAG</text>
+<rect x="560.0" y="202.0" width="74.4" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="572.0" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">ingest</text>
+<path d="M640.4 216.5 h14" stroke="#6EE7B7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="662.4" y="202.0" width="124.8" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="674.4" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">raw → bronze</text>
+<path d="M793.2 216.5 h14" stroke="#6EE7B7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="815.2" y="202.0" width="141.6" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="827.2" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">load Snowflake</text>
+<path d="M962.8 216.5 h14" stroke="#6EE7B7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="984.8" y="202.0" width="108.0" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="996.8" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">dbt silver</text>
+<path d="M1098.8 216.5 h14" stroke="#6EE7B7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1120.8" y="202.0" width="91.2" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="1132.8" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">dbt gold</text>
+<path d="M1218.0 216.5 h14" stroke="#6EE7B7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1240.0" y="202.0" width="166.8" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="1252.0" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">shadow validation</text>
+<path d="M1412.8 216.5 h14" stroke="#6EE7B7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1434.8" y="202.0" width="133.2" height="29" rx="14.5" fill="#232027" stroke="#6EE7B7" stroke-opacity="0.6" stroke-width="1.2"/><text x="1446.8" y="220.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#6EE7B7" text-anchor="start">publish to BI</text>
+<rect x="1596.0" y="202.0" width="149.4" height="28" rx="14.0" fill="#232027" stroke="#F2B544" stroke-opacity="0.6" stroke-width="1.2"/><text x="1608.0" y="219.5" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#F2B544" text-anchor="start">retries · alerts</text>
+<g id="Layer 1 Source and raw">
+<rect x="60.0" y="300" width="270.0" height="608.1" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<rect x="86.0" y="300" width="70" height="3.5" rx="1.75" fill="url(#accent)"/>
+<circle cx="112.0" cy="356" r="28" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(95.0 339.0) scale(1.4167)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 4 8h16z"/><path d="M6 10v7M10 10v7M14 10v7M18 10v7M3.5 20h17"/></g>
+<text x="304.0" y="348.0" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#37333C" text-anchor="end">01</text>
+<text x="86.0" y="418.0" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#F4F1F5" text-anchor="start">Source and raw</text>
+<text x="86.0" y="449.6" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">s3://…/raw/ano_mes=YYYYMM</text>
+<text x="86.0" y="470.5" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">Portal da Transparência ·</text><text x="86.0" y="490.1" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">monthly CSV</text>
+<rect x="86.0" y="505.6" width="218.0" height="1" fill="#37333C"/>
+<circle cx="91.0" cy="534.6" r="3.5" fill="#10B981"/>
+<text x="104.0" y="539.6" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Official files kept</text><text x="104.0" y="560.9" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">exactly as published:</text><text x="104.0" y="582.2" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">auditable copy</text>
+<circle cx="91.0" cy="610.5" r="3.5" fill="#10B981"/>
+<text x="104.0" y="615.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">latin-1, ';' separator,</text><text x="104.0" y="636.8" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">decimal comma</text>
+<circle cx="91.0" cy="665.1" r="3.5" fill="#10B981"/>
+<text x="104.0" y="670.1" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Partitioned by month:</text><text x="104.0" y="691.4" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">one month can be</text><text x="104.0" y="712.8" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">reprocessed alone</text>
+<rect x="78.0" y="830.1" width="234.0" height="60" rx="12" fill="#232027"/>
+<text x="92.0" y="857.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">Same input for the legacy and</text><text x="92.0" y="875.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">the new platform</text>
+</g>
+<path d="M336.0 604.0 h22" stroke="#6EE7B7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<g id="Layer 2 Bronze + legacy">
+<rect x="366.0" y="300" width="270.0" height="608.1" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<rect x="392.0" y="300" width="70" height="3.5" rx="1.75" fill="url(#accent)"/>
+<circle cx="418.0" cy="356" r="28" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(401.0 339.0) scale(1.4167)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 8l-9 4.5L3 8z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></g>
+<text x="610.0" y="348.0" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#37333C" text-anchor="end">02</text>
+<text x="392.0" y="418.0" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#F4F1F5" text-anchor="start">Bronze + legacy</text>
+<text x="392.0" y="449.6" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">Glue PySpark → Parquet ·</text><text x="392.0" y="468.5" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">Athena</text>
+<text x="392.0" y="489.4" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">AWS lakehouse</text>
+<rect x="392.0" y="505.0" width="218.0" height="1" fill="#37333C"/>
+<circle cx="397.0" cy="534.0" r="3.5" fill="#10B981"/>
+<text x="410.0" y="539.0" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Standard names, decimals</text><text x="410.0" y="560.3" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">cast, lineage columns</text>
+<circle cx="397.0" cy="588.6" r="3.5" fill="#10B981"/>
+<text x="410.0" y="593.6" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Dynamic partition</text><text x="410.0" y="614.9" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">overwrite</text>
+<circle cx="397.0" cy="643.2" r="3.5" fill="#10B981"/>
+<text x="410.0" y="648.2" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Athena: partition</text><text x="410.0" y="669.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">projection, legacy</text><text x="410.0" y="690.8" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">metric view, scan-cost</text><text x="410.0" y="712.1" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">report and per-query</text><text x="410.0" y="733.4" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">cutoff</text>
+<rect x="384.0" y="830.1" width="234.0" height="60" rx="12" fill="#232027"/>
+<text x="398.0" y="857.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">The legacy keeps answering</text><text x="398.0" y="875.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">during the migration</text>
+</g>
+<path d="M642.0 604.0 h22" stroke="#6EE7B7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<g id="Layer 3 Snowflake load">
+<rect x="672.0" y="300" width="270.0" height="608.1" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<rect x="698.0" y="300" width="70" height="3.5" rx="1.75" fill="url(#accent)"/>
+<circle cx="724.0" cy="356" r="28" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(707.0 339.0) scale(1.4167)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.4 1.6A3.3 3.3 0 0 0 7 18.5z"/></g>
+<text x="916.0" y="348.0" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#37333C" text-anchor="end">03</text>
+<text x="698.0" y="418.0" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#F4F1F5" text-anchor="start">Snowflake load</text>
+<text x="698.0" y="449.6" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">RAW.BRONZE.DESPESAS</text>
+<text x="698.0" y="470.5" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">storage integration · COPY</text><text x="698.0" y="490.1" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">INTO</text>
+<rect x="698.0" y="505.6" width="218.0" height="1" fill="#37333C"/>
+<circle cx="703.0" cy="534.6" r="3.5" fill="#10B981"/>
+<text x="716.0" y="539.6" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">No keys: S3 read through</text><text x="716.0" y="560.9" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">a storage integration</text>
+<circle cx="703.0" cy="589.2" r="3.5" fill="#10B981"/>
+<text x="716.0" y="594.2" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Idempotent COPY INTO,</text><text x="716.0" y="615.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">daily task, clustering</text><text x="716.0" y="636.9" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">by month</text>
+<circle cx="703.0" cy="665.1" r="3.5" fill="#10B981"/>
+<text x="716.0" y="670.1" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">One small warehouse per</text><text x="716.0" y="691.4" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">workload, 60 s</text><text x="716.0" y="712.8" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">auto-suspend, resource</text><text x="716.0" y="734.0" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">monitors</text>
+<rect x="690.0" y="830.1" width="234.0" height="60" rx="12" fill="#232027"/>
+<text x="704.0" y="857.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">Cost becomes compute-based</text><text x="704.0" y="875.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">and capped</text>
+</g>
+<path d="M948.0 604.0 h22" stroke="#6EE7B7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<g id="Layer 4 dbt silver → gold">
+<rect x="978.0" y="300" width="270.0" height="608.1" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<rect x="1004.0" y="300" width="70" height="3.5" rx="1.75" fill="url(#accent)"/>
+<circle cx="1030.0" cy="356" r="28" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(1013.0 339.0) scale(1.4167)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></g>
+<text x="1222.0" y="348.0" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#37333C" text-anchor="end">04</text>
+<text x="1004.0" y="418.0" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#F4F1F5" text-anchor="start">dbt silver → gold</text>
+<text x="1004.0" y="449.6" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">ANALYTICS.SILVER · GOLD</text>
+<text x="1004.0" y="470.5" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">star schema · 35 tests</text>
+<rect x="1004.0" y="486.1" width="218.0" height="1" fill="#37333C"/>
+<text x="1004.0" y="520.1" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#7E7684" text-anchor="start" letter-spacing="2">DIMENSIONS</text>
+<rect x="1004.0" y="534.1" width="59.0" height="28" rx="14" fill="#232027" stroke="#7DD3FC" stroke-opacity="0.55"/>
+<text x="1014.0" y="553.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#7DD3FC" text-anchor="start">Órgão</text>
+<rect x="1071.0" y="534.1" width="66.8" height="28" rx="14" fill="#232027" stroke="#7DD3FC" stroke-opacity="0.55"/>
+<text x="1081.0" y="553.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#7DD3FC" text-anchor="start">Função</text>
+<rect x="1004.0" y="570.1" width="82.4" height="28" rx="14" fill="#232027" stroke="#7DD3FC" stroke-opacity="0.55"/>
+<text x="1014.0" y="589.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#7DD3FC" text-anchor="start">Programa</text>
+<rect x="1094.4" y="570.1" width="82.4" height="28" rx="14" fill="#232027" stroke="#7DD3FC" stroke-opacity="0.55"/>
+<text x="1104.4" y="589.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#7DD3FC" text-anchor="start">Natureza</text>
+<rect x="1004.0" y="606.1" width="98.0" height="28" rx="14" fill="#232027" stroke="#7DD3FC" stroke-opacity="0.55"/>
+<text x="1014.0" y="625.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#7DD3FC" text-anchor="start">Localidade</text>
+<rect x="1110.0" y="606.1" width="98.0" height="28" rx="14" fill="#232027" stroke="#7DD3FC" stroke-opacity="0.55"/>
+<text x="1120.0" y="625.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#7DD3FC" text-anchor="start">Calendário</text>
+<text x="1004.0" y="668.1" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#7E7684" text-anchor="start" letter-spacing="2">FACTS</text>
+<rect x="1004.0" y="682.1" width="218.0" height="46" rx="10" fill="#232027" stroke="#FBBF24" stroke-opacity="0.5"/>
+<text x="1018.0" y="702.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#F4F1F5" text-anchor="start">fct_despesas</text>
+<text x="1018.0" y="720.1" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#FBBF24" text-anchor="start">committed, settled, paid</text>
+<rect x="1004.0" y="736.1" width="218.0" height="46" rx="10" fill="#232027" stroke="#FBBF24" stroke-opacity="0.5"/>
+<text x="1018.0" y="756.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#F4F1F5" text-anchor="start">agg_execucao_mensal</text>
+<text x="1018.0" y="774.1" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#FBBF24" text-anchor="start">reconciliation dataset</text>
+<rect x="996.0" y="830.1" width="234.0" height="60" rx="12" fill="#232027"/>
+<text x="1010.0" y="857.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">Same models on Snowflake and</text><text x="1010.0" y="875.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">on DuckDB (CI)</text>
+</g>
+<path d="M1254.0 604.0 h22" stroke="#6EE7B7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<g id="Layer 5 Shadow validation">
+<rect x="1284.0" y="300" width="270.0" height="608.1" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<rect x="1310.0" y="300" width="70" height="3.5" rx="1.75" fill="url(#accent)"/>
+<circle cx="1336.0" cy="356" r="28" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(1319.0 339.0) scale(1.4167)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.9-4.3-1.7-7.5-5.3-7.5-9.9V6z"/><path d="M8.8 12.2l2.2 2.2 4.3-4.6"/></g>
+<text x="1528.0" y="348.0" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#37333C" text-anchor="end">05</text>
+<text x="1310.0" y="418.0" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#F4F1F5" text-anchor="start">Shadow validation</text>
+<text x="1310.0" y="449.6" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">shadow_validation.py</text>
+<text x="1310.0" y="470.5" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">Athena vs Snowflake</text>
+<rect x="1310.0" y="486.1" width="218.0" height="1" fill="#37333C"/>
+<circle cx="1315.0" cy="515.1" r="3.5" fill="#10B981"/>
+<text x="1328.0" y="520.1" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Key coverage per month ×</text><text x="1328.0" y="541.4" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">superior body</text>
+<circle cx="1315.0" cy="569.7" r="3.5" fill="#10B981"/>
+<text x="1328.0" y="574.7" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Adherence of count,</text><text x="1328.0" y="596.0" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">committed, settled and</text><text x="1328.0" y="617.3" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">paid amounts</text>
+<circle cx="1315.0" cy="645.6" r="3.5" fill="#10B981"/>
+<text x="1328.0" y="650.6" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Divergence report with</text><text x="1328.0" y="671.9" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">the largest differences</text>
+<circle cx="1315.0" cy="700.2" r="3.5" fill="#10B981"/>
+<text x="1328.0" y="705.2" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Cut-over only with ≥</text><text x="1328.0" y="726.5" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">99.5% on every check</text>
+<rect x="1302.0" y="830.1" width="234.0" height="60" rx="12" fill="#232027"/>
+<text x="1316.0" y="857.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">Objective, auditable cut-over</text><text x="1316.0" y="875.0" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">criterion</text>
+</g>
+<path d="M1560.0 604.0 h22" stroke="#6EE7B7" stroke-width="2.5" marker-end="url(#arrow)"/>
+<g id="Layer 6 Consumption">
+<rect x="1590.0" y="300" width="270.0" height="608.1" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<rect x="1616.0" y="300" width="70" height="3.5" rx="1.75" fill="url(#accent)"/>
+<circle cx="1642.0" cy="356" r="28" fill="#232027" stroke="#047857" stroke-width="1.5"/>
+<g transform="translate(1625.0 339.0) scale(1.4167)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></g>
+<text x="1834.0" y="348.0" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#37333C" text-anchor="end">06</text>
+<text x="1616.0" y="418.0" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#F4F1F5" text-anchor="start">Consumption</text>
+<text x="1616.0" y="449.6" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#6EE7B7" text-anchor="start">Power BI REST refresh</text>
+<text x="1616.0" y="470.5" font-family="Inter, Segoe UI, sans-serif" font-size="14.5" font-weight="400" fill="#B0A9B5" text-anchor="start">one tested gold layer</text>
+<rect x="1616.0" y="486.1" width="218.0" height="1" fill="#37333C"/>
+<circle cx="1621.0" cy="515.1" r="3.5" fill="#10B981"/>
+<text x="1634.0" y="520.1" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Power BI refreshed by</text><text x="1634.0" y="541.4" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">the DAG after the gate</text>
+<circle cx="1621.0" cy="569.7" r="3.5" fill="#10B981"/>
+<text x="1634.0" y="574.7" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Teams/Slack alert when a</text><text x="1634.0" y="596.0" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">task fails</text>
+<circle cx="1621.0" cy="624.3" r="3.5" fill="#10B981"/>
+<text x="1634.0" y="629.3" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Dashboard in the Public</text><text x="1634.0" y="650.6" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">Budget Execution</text><text x="1634.0" y="671.9" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#F4F1F5" text-anchor="start">repository</text>
+<rect x="1608.0" y="830.1" width="234.0" height="60" rx="12" fill="#232027"/>
+<text x="1622.0" y="857.1" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#B0A9B5" text-anchor="start">Same numbers in every report</text>
+</g>
+<rect x="60" y="948.1" width="888.0" height="380" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<g transform="translate(88.0 974.1) scale(1.2500)" fill="none" stroke="#6EE7B7" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></g>
+<text x="130.0" y="998.1" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#F4F1F5" text-anchor="start">Where the code is</text>
+<rect x="88" y="1028.1" width="832.0" height="62" rx="10" fill="#232027"/>
+<rect x="88" y="1028.1" width="5" height="62" rx="2.5" fill="#6EE7B7"/>
+<text x="108.0" y="1054.1" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#F4F1F5" text-anchor="start">ingestion · glue · local · validation · orchestration</text>
+<text x="908.0" y="1054.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#6EE7B7" text-anchor="end">Python · PySpark</text>
+<text x="108.0" y="1077.1" font-family="Inter, Segoe UI, sans-serif" font-size="13.5" font-weight="400" fill="#B0A9B5" text-anchor="start">Landing, raw → bronze (Glue and DuckDB), shadow validation, Airflow DAG</text>
+<rect x="88" y="1098.1" width="832.0" height="62" rx="10" fill="#232027"/>
+<rect x="88" y="1098.1" width="5" height="62" rx="2.5" fill="#FBBF24"/>
+<text x="108.0" y="1124.1" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#F4F1F5" text-anchor="start">athena · snowflake · dbt</text>
+<text x="908.0" y="1124.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#FBBF24" text-anchor="end">SQL</text>
+<text x="108.0" y="1147.1" font-family="Inter, Segoe UI, sans-serif" font-size="13.5" font-weight="400" fill="#B0A9B5" text-anchor="start">Legacy views, Snowflake setup and load, silver/gold models and tests</text>
+<rect x="88" y="1168.1" width="832.0" height="62" rx="10" fill="#232027"/>
+<rect x="88" y="1168.1" width="5" height="62" rx="2.5" fill="#7DD3FC"/>
+<text x="108.0" y="1194.1" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#F4F1F5" text-anchor="start">infra/terraform</text>
+<text x="908.0" y="1194.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#7DD3FC" text-anchor="end">Terraform</text>
+<text x="108.0" y="1217.1" font-family="Inter, Segoe UI, sans-serif" font-size="13.5" font-weight="400" fill="#B0A9B5" text-anchor="start">S3, Glue job and schedule, Athena workgroup, IAM role for Snowflake</text>
+<rect x="88" y="1238.1" width="832.0" height="62" rx="10" fill="#232027"/>
+<rect x="88" y="1238.1" width="5" height="62" rx="2.5" fill="#34D399"/>
+<text x="108.0" y="1264.1" font-family="JetBrains Mono, Consolas, monospace" font-size="14" font-weight="600" fill="#F4F1F5" text-anchor="start">tests · .github/workflows</text>
+<text x="908.0" y="1264.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#34D399" text-anchor="end">pytest · CI</text>
+<text x="108.0" y="1287.1" font-family="Inter, Segoe UI, sans-serif" font-size="13.5" font-weight="400" fill="#B0A9B5" text-anchor="start">Whole pipeline and the Airflow DAG on real sample data at every push</text>
+<rect x="972.0" y="948.1" width="888.0" height="380" rx="22" fill="#1B191E" stroke="#37333C" stroke-width="1.5"/>
+<g transform="translate(1000.0 974.1) scale(1.2500)" fill="none" stroke="#FBBF24" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4.5-5"/><circle cx="12" cy="16" r="1.5"/></g>
+<text x="1042.0" y="998.1" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#F4F1F5" text-anchor="start">What the project proves</text>
+<rect x="1000.0" y="1030.1" width="199.0" height="272" rx="14" fill="#232027"/>
+<rect x="1018.0" y="1030.1" width="44" height="3" rx="1.5" fill="#FBBF24"/>
+<text x="1018.0" y="1094.1" font-family="Inter, Segoe UI, sans-serif" font-size="40" font-weight="800" fill="#FBBF24" text-anchor="start">100%</text>
+<text x="1018.0" y="1132.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">adherence Athena vs</text><text x="1018.0" y="1152.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">Snowflake (gate</text><text x="1018.0" y="1171.8" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">99.5%)</text>
+<rect x="1211.0" y="1030.1" width="199.0" height="272" rx="14" fill="#232027"/>
+<rect x="1229.0" y="1030.1" width="44" height="3" rx="1.5" fill="#FBBF24"/>
+<text x="1229.0" y="1094.1" font-family="Inter, Segoe UI, sans-serif" font-size="40" font-weight="800" fill="#FBBF24" text-anchor="start">35</text>
+<text x="1229.0" y="1132.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">dbt data quality</text><text x="1229.0" y="1152.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">tests on every run</text>
+<rect x="1422.0" y="1030.1" width="199.0" height="272" rx="14" fill="#232027"/>
+<rect x="1440.0" y="1030.1" width="44" height="3" rx="1.5" fill="#FBBF24"/>
+<text x="1440.0" y="1094.1" font-family="Inter, Segoe UI, sans-serif" font-size="40" font-weight="800" fill="#FBBF24" text-anchor="start">60 s</text>
+<text x="1440.0" y="1132.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">auto-suspend: cost</text><text x="1440.0" y="1152.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">per second, with</text><text x="1440.0" y="1171.8" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">monthly caps</text>
+<rect x="1633.0" y="1030.1" width="199.0" height="272" rx="14" fill="#232027"/>
+<rect x="1651.0" y="1030.1" width="44" height="3" rx="1.5" fill="#FBBF24"/>
+<text x="1651.0" y="1094.1" font-family="Inter, Segoe UI, sans-serif" font-size="40" font-weight="800" fill="#FBBF24" text-anchor="start">1</text>
+<text x="1651.0" y="1132.1" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">monthly DAG, no</text><text x="1651.0" y="1152.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#B0A9B5" text-anchor="start">manual steps</text>
+</svg>
